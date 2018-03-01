@@ -27,7 +27,7 @@ import re
 import os.path
 import errno
 import shutil
-import urlparse
+from .._compatibility import urlparse
 import multiprocessing
 
 __all__ = ['copy']
