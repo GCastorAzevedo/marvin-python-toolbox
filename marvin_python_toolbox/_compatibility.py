@@ -25,6 +25,7 @@ from __future__ import division
 from __future__ import absolute_import
 from __future__ import unicode_literals
 from six.moves.urllib.parse import urlparse
+from six import StringIO
 import six
 
 __all__ = ['six']

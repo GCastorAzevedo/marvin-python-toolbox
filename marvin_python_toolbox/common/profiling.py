@@ -22,7 +22,7 @@ import cProfile
 import pstats
 import uuid
 from functools import wraps
-import StringIO
+from .._compatibility import StringIO
 
 from .._logging import get_logger
 
