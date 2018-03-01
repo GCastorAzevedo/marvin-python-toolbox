@@ -36,7 +36,7 @@ class Profile(cProfile.Profile):
         super(Profile, self).__init__(*args, **kwargs)
 
     def _repr_html_(self):
-        s = StringIO.StringIO()
+        s = StringIO()
         stats = pstats.Stats(self, stream=s).sort_stats(self.sortby)
         stats.print_stats(10)
         stats_value = s.getvalue()

@@ -265,7 +265,7 @@ def get_tag_from_repo_url(repos):
     tags = {}
     for repo in repos:
         if '@' in repo:
-            repo_parsed = urlparse.urlparse(repo)
+            repo_parsed = urlparse(repo)
             repo_path = repo_parsed.path
             tags[repo] = repo_path.split('@')[1]
         else:
@@ -317,7 +317,7 @@ repo_re = re.compile(r':(\w+)\/(.*)\.git')
 
 def git_clone(repo, dest=None, checkout=True, depth=None, branch=None, single_branch=False):
     if '#egg' in repo:
-        repo_parsed = urlparse.urlparse(repo)
+        repo_parsed = urlparse(repo)
         repo_path = repo_parsed.path
         if '@' in repo_path:
             repo_path = repo_path.split('@')[0]
