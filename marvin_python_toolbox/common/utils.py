@@ -33,7 +33,7 @@ from slugify import slugify
 
 # Use six to create code compatible with Python 2 and 3.
 # See http://pythonhosted.org/six/
-from .._compatibility import six
+from .._compatibility import range
 from .._logging import get_logger
 from .exceptions import InvalidJsonException
 
@@ -110,7 +110,7 @@ class class_property(object):
 
 def chunks(lst, size):
     """Yield successive n-sized chunks from lst."""
-    for i in xrange(0, len(lst), size):
+    for i in range(0, len(lst), size):
         yield lst[i:i + size]
 
 
