@@ -248,6 +248,6 @@ def test_url_encode():
 
 
 def test_url_encode_string():
-    original = 'http://host.com/path_with_special_char_\xc3\xa1\xc3\xa9\xc3\xad\xc3\xb3\xc3\xba?and=query&string=true'
+    original = b'http://host.com/path_with_special_char_\xc3\xa1\xc3\xa9\xc3\xad\xc3\xb3\xc3\xba?and=query&string=true'
     transformed = 'http://host.com/path_with_special_char_%C3%A1%C3%A9%C3%AD%C3%B3%C3%BA?and=query&string=true'
     assert url_encode(original) == transformed

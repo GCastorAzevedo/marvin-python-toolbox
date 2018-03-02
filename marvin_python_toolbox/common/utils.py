@@ -28,12 +28,11 @@ import uuid
 import hashlib
 import jsonschema
 import warnings
-import urllib
 from slugify import slugify
 
 # Use six to create code compatible with Python 2 and 3.
 # See http://pythonhosted.org/six/
-from .._compatibility import xrange
+from .._compatibility import xrange, quote
 from .._logging import get_logger
 from .exceptions import InvalidJsonException
 
@@ -293,4 +292,4 @@ def url_encode(url):
     """
     if isinstance(url, unicode):
         url = url.encode('utf8')
-    return urllib.quote(url, ':/%?&=')
+    return quote(url, ':/%?&=')
