@@ -84,7 +84,7 @@ def test_class_property():
 
 def test_to_json():
     d = {'i': 42, 's': 'string', 'dt': datetime.datetime.now(), 'id': uuid.uuid4()}
-    assert isinstance(to_json(d), basestring)
+    assert isinstance(to_json(d), str)
 
 
 def test_to_json_with_obj_with_id():
@@ -92,7 +92,7 @@ def test_to_json_with_obj_with_id():
         id = '42'
 
     d = {'i': Obj()}
-    assert isinstance(to_json(d), basestring)
+    assert isinstance(to_json(d), str)
 
 
 def test_to_json_with_obj_without_id():
