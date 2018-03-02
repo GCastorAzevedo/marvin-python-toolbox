@@ -156,7 +156,7 @@ def _from_json_object_hook(obj):
 
     for key, value in obj.items():
         # Check for datetime objects
-        if isinstance(value, basestring):
+        if isinstance(value, str):
             dt_result = datetime_regex.match(value)
             if dt_result:
                 year, month, day, hour, minute, second = map(
@@ -180,9 +180,9 @@ def from_json(json_str):
 
 
 def validate_json(data, schema):
-    if isinstance(data, basestring):
+    if isinstance(data, str):
         data = from_json(data)
-    if isinstance(schema, basestring):
+    if isinstance(schema, str):
         schema = from_json(schema)
 
     try:

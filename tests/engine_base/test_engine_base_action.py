@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import cPickle as serializer
+import joblib as serializer
 import pytest
 import os
 import shutil
