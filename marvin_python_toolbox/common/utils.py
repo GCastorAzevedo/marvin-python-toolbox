@@ -32,7 +32,7 @@ from slugify import slugify
 
 # Use six to create code compatible with Python 2 and 3.
 # See http://pythonhosted.org/six/
-from .._compatibility import xrange, quote
+from .._compatibility import xrange, text_type, quote
 from .._logging import get_logger
 from .exceptions import InvalidJsonException
 
@@ -290,6 +290,6 @@ def url_encode(url):
     :param url: str
     :return: str - encoded url
     """
-    if isinstance(url, unicode):
+    if isinstance(url, text_type):
         url = url.encode('utf8')
     return quote(url, ':/%?&=')
