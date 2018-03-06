@@ -111,7 +111,7 @@ class profiling(object):
 
             # make sure the output path exists
             if not os.path.exists(output_path):  # pragma: no cover
-                os.makedirs(output_path, mode=774)
+                os.makedirs(output_path, mode=0o774)
 
             # collect profiling info
             stats = pstats.Stats(pr)
