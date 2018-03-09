@@ -369,16 +369,16 @@ def get_git_branch(path=None):
         path = os.path.curdir
     command = 'git rev-parse --abbrev-ref HEAD'.split()
     branch = subprocess.Popen(command, stdout=subprocess.PIPE, cwd=path).stdout.read()
-    return branch.strip()
+    return branch.strip().decode('utf-8')
 
 
 def get_git_tag(path=None):
     if path is None:
         path = os.path.curdir
     command = 'git rev-list --tags --max-count=1'.split()
-    commit = subprocess.Popen(command, stdout=subprocess.PIPE, cwd=path).stdout.read()
+    commit = subprocess.Popen(command, stdout=subprocess.PIPE, cwd=path).stdout.read().decode('utf-8')
     command = 'git describe --tags {}'.format(commit).split()
-    tag = subprocess.Popen(command, stdout=subprocess.PIPE, cwd=path).stdout.read()
+    tag = subprocess.Popen(command, stdout=subprocess.PIPE, cwd=path).stdout.read().decode('utf-8')
     return tag.strip()
 
 
@@ -390,7 +390,7 @@ def get_git_commit(path=None, tag=None):
     else:
         command = 'git rev-parse HEAD'.split()
     commit = subprocess.Popen(command, stdout=subprocess.PIPE, cwd=path).stdout.read()
-    return commit.strip()
+    return commit.strip().decode('utf-8')
 
 
 def get_git_repository_url(path=None):
@@ -398,7 +398,7 @@ def get_git_repository_url(path=None):
         path = os.path.curdir
     command = 'git config --get remote.origin.url'.split()
     url = subprocess.Popen(command, stdout=subprocess.PIPE, cwd=path).stdout.read()
-    return url.strip()
+    return url.strip().decode('utf-8')
 
 
 def get_git_tags(path=None):
