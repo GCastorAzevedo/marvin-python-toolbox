@@ -156,4 +156,4 @@ def test_engine_httpserver(Popen_mocked, Config_mocked, MarvinData_mocked, sleep
     ))
 
     Popen_mocked.assert_has_calls(expected_calls)
-    exit_mocked.assert_called_once_with(0)
+    exit_mocked.assert_called_with(0)
