@@ -40,7 +40,7 @@ class AbstractMarvinData(type):
         return cls.get_data_path()
 
 
-class MarvinData(AbstractMarvinData):
+class MarvinData(with_metaclass(AbstractMarvinData)):
     _key = 'MARVIN_DATA_PATH'
 
     @classmethod
